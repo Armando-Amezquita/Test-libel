@@ -87,7 +87,7 @@ function App() {
   return (
     <>
     <header className='header'>
-      <div className="container d-flex justify-content-between align-items-center">
+      <div className="container-header container d-flex justify-content-between align-items-center">
           <div className='left'>
               <h1 className="title-header">Big Comback</h1>
               <p className="description-header">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quae ipsam odit quod quidem id inventore unde itaque, reiciendis excepturi..</p>
@@ -153,36 +153,41 @@ function App() {
     <main>
         <div className="container">
           <nav className="navbar navbar-expand-lg mb-4 ">
-              <ul className="navbar-nav">
-                  <li className="nav-item">Today</li>
-                  <li className="nav-item">This week</li>
-                  <li className="nav-item">last 30 days</li>
+              <ul className="nav-carucel navbar-nav">
+                  <li className="nav-item">
+                    <a href='#'>Today</a></li>
+                  <li className="nav-item">
+                    <a href='#'>This week</a>
+                  </li>
+                  <li className="nav-item">
+                    <a href='#'>last 30 days</a>
+                  </li>
               </ul>
           </nav>
-          <form className=' mb-4' onSubmit={searchMovies}>
+          <form className='mb-4' onSubmit={searchMovies}>
             <input type='text' placeholder='Buscar' onChange={(e) => setSearchKey(e.target.value)} className="input-search"
             />
             <button className='btn-style btn btn-primary'>Buscar</button>
           </form>
           <div className='carucel'>
-          <Carousel className='carucel-left' responsive={responsive}>
-            {
-              movies?.map((movie) => (
-              <div 
-                  key={movie.id} 
-                  className="card-movies" 
-                  onClick={() => selectMovie(movie)}
-                  >
-                <img src={`${URL_IMAGE + movie.poster_path}`} 
-                  alt='Img' 
-                  className='image'
-                />
-                <p className='year-image'>{movie.release_date}</p>
-                <h4 className='title-image'>{movie.title}</h4>
-              </div> 
-            ))    
-            }
-          </Carousel>
+            <Carousel className='carucel-left' responsive={responsive}>
+              {
+                movies?.map((movie) => (
+                <div 
+                    key={movie.id} 
+                    className="card-movies" 
+                    onClick={() => selectMovie(movie)}
+                    >
+                  <img src={`${URL_IMAGE + movie.poster_path}`} 
+                    alt='Img' 
+                    className='image'
+                  />
+                  <p className='year-image'>{movie.release_date}</p>
+                  <h4 className='title-image'>{movie.title}</h4>
+                </div> 
+                ))    
+              }
+            </Carousel>
             <div className="carucel-rigth">
                 <h2 className="title-carucel-rigth"> Action & <br /> Drama Movies</h2>
                 <p className="view">view all</p>

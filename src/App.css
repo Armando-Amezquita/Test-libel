@@ -59,6 +59,7 @@ li{
 }
 .carucel-left{
     width: 90%;
+
 }
 .carucel-rigth{
     width: 20%;
@@ -110,4 +111,46 @@ li{
 .arrows{
     width: 3rem;
     height: 3rem;
+}
+
+@media screen and (max-width: 745px) { 
+    .container-header {
+        flex-direction: column;
+    }
+    .left{
+        text-align: center;
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+    .viewtrailer{
+        width: 30rem;
+    }
+    .carucel{
+        flex-direction: column;
+        text-align: center;
+    }
+    .carucel-left{
+        width: 50%;
+    }
+    .carucel-rigth{
+        width: 90%;
+    }
+    .nav-carucel{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 975px) { 
+    .viewtrailer{
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width: 400px) { 
+    .viewtrailer{
+        width: 20rem;
+    }
 }
